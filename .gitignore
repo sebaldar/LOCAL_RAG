@@ -56,6 +56,12 @@ faiss_index/
 vectorstore/
 *.faiss
 *.ann
+# Database vettoriale (LanceDB)
+my_knowledge_base/
+*.lance/
+
+# Specifici per Raspberry/Linux
+.cache/
 
 # Jupyter / notebook output
 .ipynb_checkpoints/

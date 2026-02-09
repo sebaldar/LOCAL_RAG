@@ -1,0 +1,1 @@
+pip install lancedb pandas sentence-transformers openai pypdf python-dotenv

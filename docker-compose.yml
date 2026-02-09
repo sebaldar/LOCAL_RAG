@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  rag-system:
+    build: .
+    container_name: local_rag
+    volumes:
+      - ./documenti:/app/documenti
+      - ./my_knowledge_base:/app/my_knowledge_base
+      - ./.env:/app/.env
+    stdin_open: true # Permette l'input da tastiera (per il menu)
+    tty: true        # Permette l'interfaccia a colori nel terminale

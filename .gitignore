@@ -1,0 +1,70 @@
+# Python specifici
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Ambienti virtuali e dipendenze locali
+venv/
+env/
+.venv/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# File sensibili / segreti (NON committare mai!)
+.env
+*.env
+secrets.yaml
+api_key.txt
+config_local.yaml
+Document/
+
+# Cache e file temporanei
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# Dipendenze installate (se usi pip install -r requirements.txt)
+pip/
+pip-selfcheck.json
+
+# File grossi / dati (es. modelli scaricati, embeddings, database locali)
+*.bin
+*.pt
+*.pth
+*.h5
+*.pickle
+data/
+embeddings/
+chroma/
+faiss_index/
+vectorstore/
+*.faiss
+*.ann
+
+# Jupyter / notebook output
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+*.ipynb
+
+# Altro comune in progetti ML/RAG
+wandb/
+mlruns/
+tensorboard/
+runs/
+checkpoints/

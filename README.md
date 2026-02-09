@@ -26,7 +26,6 @@ Progettato per essere **leggero**, eseguibile anche su un Raspberry Pi 5 o su la
 
 ### Librerie principali
 
-```text
 sentence-transformers
 lancedb
 pypdf

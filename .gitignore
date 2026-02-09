@@ -24,7 +24,7 @@ env/
 secrets.yaml
 api_key.txt
 config_local.yaml
-Document/
+documenti/
 
 # Cache e file temporanei
 *.log

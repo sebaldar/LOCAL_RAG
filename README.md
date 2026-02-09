@@ -1,50 +1,32 @@
-LOCAL_RAG System
-Indicizzazione e Chat con Documenti Personali
+# LOCAL_RAG System - Indicizzazione e Chat con Documenti Personali
 
-Un semplice sistema Retrieval-Augmented Generation (RAG) che permette di:
+Un semplice sistema **Retrieval-Augmented Generation (RAG)** che permette di:
 
-Indicizzare documenti PDF, TXT e Markdown
+- Indicizzare documenti PDF, TXT e Markdown in un database vettoriale locale (LanceDB)
+- Fare domande in linguaggio naturale sui contenuti indicizzati
+- Ottenere risposte generate da **OpenAI GPT-4o-mini** con citazione delle fonti esatte (file, pagina approssimativa, riga)
 
-Salvare embedding in un database vettoriale locale (LanceDB)
+Progettato per essere **leggero**, eseguibile anche su un Raspberry Pi 5 o su laptop con poca RAM.
 
-Fare domande in linguaggio naturale sui documenti indicizzati
+## Caratteristiche principali
 
-Ottenere risposte generate da OpenAI GPT-4o-mini con citazione delle fonti
-(file, pagina approssimativa, riga)
+- Embedding con **all-MiniLM-L6-v2** (~80 MB di RAM)
+- Database vettoriale locale con **LanceDB**
+- Supporto per **PDF**, **.txt** e **.md**
+- Splitting semplice del testo in blocchi di 5 righe
+- Memoria contestuale di base (ultimi 3 scambi)
+- Interfaccia menu testuale semplice
+- Possibilità di resettare completamente il database
 
-Progettato per essere leggero, eseguibile anche su Raspberry Pi 5 o su laptop con poca RAM.
+## Requisiti
 
-🚀 Caratteristiche principali
+- Python 3.9+
+- Sistema operativo: Linux (testato su Raspberry Pi OS), Windows, macOS
+- Connessione internet solo per le chiamate a OpenAI
 
-Embedding con all-MiniLM-L6-v2 (~80 MB RAM)
+### Librerie principali
 
-Database vettoriale locale con LanceDB
-
-Supporto per PDF, .txt e .md
-
-Splitting semplice del testo in blocchi di 5 righe
-
-Memoria contestuale di base (ultimi 3 scambi)
-
-Interfaccia a menu testuale
-
-Possibilità di reset completo del database
-
-🧰 Requisiti
-
-Python 3.9+
-
-Sistema operativo:
-
-Linux (testato su Raspberry Pi OS)
-
-Windows
-
-macOS
-
-Connessione internet solo per le chiamate OpenAI
-
-📦 Librerie principali
+```text
 sentence-transformers
 lancedb
 pypdf
@@ -52,38 +34,33 @@ openai
 python-dotenv
 pandas
 
-🔧 Installazione
-1️⃣ Clona il repository
+Installazione
+    1. Clona il repository 
+Bash
 git clone https://github.com/sebaldar/LOCAL_RAG.git
 cd RAG
-
-2️⃣ Crea un ambiente virtuale (consigliato)
+    2. Crea un ambiente virtuale (consigliato) 
+Bash
 python -m venv venv
 source venv/bin/activate    # Linux / macOS
-# oppure su Windows:
-venv\Scripts\activate
-
-3️⃣ Installa le dipendenze
+# oppure su Windows: venv\Scripts\activate
+    3. Installa le dipendenze 
+Bash
 pip install -r requirements.txt
-
-4️⃣ Configura la chiave OpenAI
-
+    4. Configura la chiave OpenAI 
 Crea un file .env nella root del progetto:
-
+env
 OPENAI_API_KEY=sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-
-Puoi ottenere la chiave da:
-👉 https://platform.openai.com/api-keys
-
-▶️ Utilizzo
-
+Puoi ottenere la chiave da: https://platform.openai.com/api-keys
+Utilizzo
 Avvia il programma principale:
-
+Bash
 python main.py
+Menu disponibile
+text
 
 📋 Menu disponibile
-MATHEMATIC - RAG SYSTEM
+RAG SYSTEM
 ==============================
 1.  INDICIZZA DOCUMENTI (Aggiorna DB)
 2.  AVVIA CHAT (OpenAI)
